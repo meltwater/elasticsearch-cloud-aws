@@ -123,6 +123,11 @@ public class AmazonS3Wrapper implements AmazonS3 {
     }
 
     @Override
+    public HeadBucketResult headBucket(HeadBucketRequest headBucketRequest) throws AmazonClientException, AmazonServiceException {
+        return delegate.headBucket(headBucketRequest);
+    }
+
+    @Override
     public List<Bucket> listBuckets() throws AmazonClientException, AmazonServiceException {
         return delegate.listBuckets();
     }
@@ -275,6 +280,11 @@ public class AmazonS3Wrapper implements AmazonS3 {
     @Override
     public void deleteBucketReplicationConfiguration(String bucketName) throws AmazonServiceException, AmazonClientException {
         delegate.deleteBucketReplicationConfiguration(bucketName);
+    }
+
+    @Override
+    public void deleteBucketReplicationConfiguration(DeleteBucketReplicationConfigurationRequest deleteBucketReplicationConfigurationRequest) throws AmazonServiceException, AmazonClientException {
+        delegate.deleteBucketReplicationConfiguration(deleteBucketReplicationConfigurationRequest);
     }
 
     @Override

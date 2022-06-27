@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.elasticsearch</groupId>
+    <groupId>com.meltwater</groupId>
     <artifactId>elasticsearch-cloud-aws</artifactId>
-    <version>2.7.1</version>
+    <version>2.7.2</version>
     <packaging>jar</packaging>
     <name>Elasticsearch AWS cloud plugin</name>
     <description>The Amazon Web Service (AWS) Cloud plugin allows to use AWS API for the unicast discovery mechanism and add S3 repositories.</description>
@@ -32,7 +32,7 @@
     </parent>
 
     <properties>
-        <amazonaws.version>1.10.12</amazonaws.version>
+        <amazonaws.version>1.10.39</amazonaws.version>
     </properties>
 
     <dependencies>
@@ -108,6 +108,17 @@
             <type>test-jar</type>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>meltwater-releases</id>
+            <url>https://meltwater.jfrog.io/meltwater/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>meltwater-snapshots</id>
+            <url>https://meltwater.jfrog.io/meltwater/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <resources>
